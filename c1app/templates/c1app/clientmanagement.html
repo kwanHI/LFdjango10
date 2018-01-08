@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block head %}
+<h1>Life Foundation Client Administration System</h1>
+<title>Life Foundation Case Administration</title>
+{% endblock %}
+<br/>
+{% block body %}
+<p> You are logging in as : {{ form.user.username }}</p>
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+   <div class="container">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+       Search Client
+    </div> <!-- end panel-heading for search client -->
+    <div class="panel-body">
+      {% include "c1app/searchclient1.html" %}
+    </div> <!-- end div class for panel-body to show form enter search client -->
+    <div class="panel-footer">
+    </div>
+  </div> <!-- end div class panel panel-default for search client -->
+   </div> <!-- end div container for search client -->
+   <div class="container"> <!-- show information of new client form-->
+     <div class="panel panel-default">
+     <div class="panel-heading">
+        New Client Form
+     </div> <!-- end panel-heading for new client form -->
+     <div class="panel-bod">
+       {% block newclient %}
+       {% include 'c1app/newclient.html' %}
+       {% endblock newclient %}
+     </div> <!-- end div class for new client-->
+   </div> <!-- end div panel panel-default for new client form -->
+</div> <!-- end jumbotron -->
+
+{% endblock %}

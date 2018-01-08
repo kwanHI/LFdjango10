@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block head %}
+<h1>Life Foundation Client Administration System</h1>
+<title>Life Foundation Case Administration</title>
+{% endblock %}
+<br/>
+{% block body %}
+<p> You are logging in as : {{ user.username }}</p>
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+   <div class="container">
+     <div class="panel panel-default">
+       <div class="panel-heading">
+          Search Client
+       </div> <!-- end panel-heading for search client -->
+       <div class="panel-body">
+           <FORM id="search_form" method="post" action="{% url 'client_list' %} enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ sform.as_p }}
+              <INPUT type="submit" name="submit" value="Search" />
+          </FORM>
+       </div> <!-- end div class for panel-body to show form enter search client -->
+       <div class="panel-footer">
+       </div>
+     </div> <!-- end div class panel panel-default for search client -->
+   </div> <!-- end div container for search client -->
+
+   <div class="container"> <!-- show information of new client form-->
+     <div class="panel panel-default">
+     <div class="panel-heading">
+        New Client Form
+     </div> <!-- end panel-heading for new client form -->
+     <div class="panel-body">
+       <FORM id="newclient_form" method="post" action="">
+           {% csrf_token %}
+           {{ cform.as_p }}
+           <INPUT type="submit" name="submit" value="Submit" />
+       </FORM>
+     </div> <!-- end div panel-body -->
+   </div> <!-- end div panel panel-default for new client form -->
+</div> <!-- end jumbotron -->
+
+{% endblock %}

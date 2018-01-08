@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block head %}
+<h1>Life Foundation Client Administration System</h1>
+<title>Life Foundation Case Administration</title>
+{% endblock %}
+<br/>
+{% block body %}
+<p> You are logging in as : {{ user.username }}</p>
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+   <div class="container">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+       Search Client
+    </div> <!-- end panel-heading for search client -->
+    <div class="panel-body">
+     <form class="form-inline" method="get" action="search_client">
+        <label class="sr-only" for="inlineFormInput">First Name</label>
+        <input type="text" class="form-control"
+              id="inlineFormInput"
+              placeholder="First">
+        <label class="sr-only" for="inlineFormInput">Last Name</label>
+        <input type="text" class="form-control"
+                    id="inlineFormInput"
+                    placeholder="Last">
+
+        <label class="sr-only" for="inlineFormInputGroup">Email</label>
+        <div class="input-group">
+          <input type="email" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="you@example.com">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div> <!-- end div class for panel-body to show form enter search client -->
+    <div class="panel-footer">
+      {% block listclient %}
+      {% include 'c1app/listclient.html' %}
+      {% endblock listclient %}
+    </div>
+  </div> <!-- end div class panel panel-default for search client -->
+   </div> <!-- end div container for search client -->
+   <div class="container"> <!-- show information of new client form-->
+     <div class="panel panel-default">
+     <div class="panel-heading">
+        New Client Form
+     </div> <!-- end panel-heading for new client form -->
+     <div class="panel-body">
+
+        {% block newclient %}
+        {% include 'c1app/newclient.html' %}
+        {% endblock newclient %}
+        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+
+     </div> <!-- end div panel-body -->
+   </div> <!-- end div panel panel-default for new client form -->
+</div> <!-- end jumbotron -->
+
+{% endblock %}

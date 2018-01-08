@@ -1,0 +1,88 @@
+
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+    <head>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+            integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+            crossorigin="anonymous">
+
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+              integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+              crossorigin="anonymous">
+      </script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+      <meta charset="utf-8">
+      <!-- Bootstrap core CSS -->
+
+      {% block head %}
+      <title>Test Client Administration</title>
+      {% endblock %}
+    </head>
+    <body>
+       <br>
+       <div class="container">
+          <nav class="navbar navbar-inverse">
+              <div class="container-fluid">
+                 <div class="navbar-header">
+                   <a class="navbar-brand" href="#">LF case administration</a>
+                 </div>
+                 <div id="navbar" class="navbar-collapse collapse">
+                   <ul class="nav navbar-nav navbar-right">
+                     {% if user.is_authenticated %}
+                     <li><a href="/client/logout/">Logout</a></li>
+                      {% else %}
+                     <li><a href="/client/login/">Login</a></li>
+                     {% endif %}
+                   </ul>
+                   {% if user.is_authenticated %}
+                   <ul class="nav navbar-nav navbar-left">
+                     <li class="dropdown">
+                        <a class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           href="/client/caseadmin/">
+                        Client Services
+                        <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Client Profile</a></li>
+                          <li><a href="#">Client Administration</a></li>
+                          <li><a href="#">Client Report</a></li>
+                        </ul>
+                      </li>
+                  </ul>
+                  {%else %}
+                  <ul class="nav navbar-nav navbar-left">
+                       <li><a class="dropdown-toggle"
+                          data-toggle="dropdown"
+                          href="#">
+
+                          </a>
+                       </li>
+                  </ul>
+                  {% endif %}
+                </div><!--/.nav-collapse -->
+               </div><!--/.container-fluid -->
+             </nav>
+
+           </div> <!-- /container -->
+
+
+       {% block body %}
+       {% endblock %}
+
+    </body>
+  </html>

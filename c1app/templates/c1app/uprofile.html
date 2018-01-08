@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Life Foundation User Profile Page</title>
+{% endblock head %}
+
+{% block body %}
+<div class="jumbotron">
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">Life Foundation User Profile</div>
+    <div class="panel-body">
+      <p><b>First name:</b> {{ user.first_name }} </p>
+      <p><b>Last name:</b> {{ user.last_name  }} </p>
+      <p><b>Email:</b> {{ user.email }} </p>
+    </div> <!-- end panel body -->
+  </div> <!-- end panel panel-default -->
+</div> <!-- end container -->
+</div> <!-- end jumbotron -->
+{% endblock body %}

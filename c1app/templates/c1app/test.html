@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block head %}
+<h1>TEST TEST TEST</h1>
+<title>TEST</title>
+{% endblock %}
+<br/>
+{% block body %}
+<p> TEST TEST TEST </p>
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+   <div class="container">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+       TEST Search Client
+    </div> <!-- end panel-heading for search client -->
+    <div class="panel-body">
+     <form class="form-inline">
+        <label class="sr-only" for="inlineFormInput">First Name</label>
+        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"
+              id="inlineFormInput"
+              placeholder="First">
+        <label class="sr-only" for="inlineFormInput">Last Name</label>
+        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"
+                    id="inlineFormInput"
+                    placeholder="Last">
+
+        <label class="sr-only" for="inlineFormInputGroup">Email</label>
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <input type="email" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="you@example.com">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div> <!-- end div class for panel-body to show form enter search client -->
+    <div class="panel-footer">
+      {% block listclient %}
+      {% include 'c1app/listclient.html' %}
+      {% endblock listclient %}
+    </div>
+  </div> <!-- end div class panel panel-default for search client -->
+</div> <!-- end div container for search client -->
+</div> <!-- end jumbotron -->
+
+{% endblock %}

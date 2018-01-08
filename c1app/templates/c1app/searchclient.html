@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+{% block head %}
+<h1>Life Foundation Client Administration System</h1>
+<title>Life Foundation Case Administration</title>
+{% endblock %}
+<br/>
+{% block body %}
+<p> You are logging in as : {{ user.username }}</p>
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+   <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+         Search Client
+      </div> <!-- end panel-heading for search client -->
+      <div class="panel-body">
+        {% block searchclient %}
+          <h2>test</h2>
+          <form id = "searchclient" method="post" action="{% url SearchClientView %}">
+             {% csrf_token %}
+             {{ searchclientform }}
+             <input type="submit" value="Search">
+          </form>
+        {% endblock searchclient %}
+      </div> <!-- end div class for panel-body to show form enter search client -->
+      <div class="panel-footer">
+      </div>
+    </div> <!-- end div class panel panel-default for search client -->
+  </div> <!-- end div container for search client -->
+</div> <!-- end div jumbotron-->
+
+<!-- ------------------------------------------- -->
+<div class="container">
+ <div class="panel panel-default">
+   <div class="panel-heading">
+      Add New Client
+   </div> <!-- end panel-heading for new client -->
+   <div class="panel-body">
+     {% block newclient %}
+       <h2>test2</h2>
+       <form id = "newclient" method="post" action="{% url newclientview %}">
+          {% csrf_token %}
+          {{ newclientform }}
+          <input type="submit" value="Search">
+       </form>
+     {% endblock newclient %}
+   </div> <!-- end div class for panel-body to show form enter new client -->
+   <div class="panel-footer">
+   </div>
+ </div> <!-- end div class panel panel-default for newclient -->
+</div> <!-- end div container for new client -->
+</div> <!-- end div jumbotron -->
+{% endblock body %}

@@ -1,0 +1,346 @@
+{% block head %}
+
+{% endblock head %}
+
+{% block newclient %}
+<form id=newclient>
+<div class="form-group">
+  <label for="legalname-input" class="col-2 col-form-label">Legal Name</label>
+
+  <div class="form-group-inline">
+     <input type="text" id="first1" class="col-xs-3 col-md-5"
+     placeholder="First name (required)" required>
+     <input type="text" id="middle1"  class="col-xs-3 col-md-2"
+     placeholder="Middle name">
+     <input type="text" id="last1" class="col-xs-3 col-md-5"
+     placeholder="Last name (required)">
+  </div>
+</div>
+<div class="form-group">
+  <label for="legalname-input" class="col-2 col-form-label">Preferred Name</label>
+  <div class="form-group-inline">
+     <input type="text" id="first2" class="col-xs-3 col-md-5" placeholder="Preferred first name">
+     <input type="text" id="middle2"  class="col-xs-3 col-md-2" placeholder="Preferred middle name">
+     <input type="text" id="last2" class="col-xs-3 col-md-5" placeholder="Preferred last name">
+  </div>
+</div>
+
+<div class="form-group"> <!-- Date input -->
+   <label class="control-label" for="date">Date of Birth</label>
+   <input class="form-control" id="date" type="date" name="date" placeholder="MM/DD/YYYY (required)" type="text"/>
+</div>
+
+<!-- ssn -->
+<div class="form-group">
+<div class="form-inline">
+  <label for="ssnlabel">Social Security Number</label>
+  <input type="text"
+  class="form-control mb-2 mr-sm-2 mb-sm-0"
+  id="ssn1" placeholder="xxx">
+
+  <label class="sr-only" for="ssninput2">xx</label>
+  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+    <div class="input-group-addon">-</div>
+    <input type="text" class="form-control"
+    id="ssn2" placeholder="xx">
+  </div>
+
+  <label class="sr-only" for="ssninput3">xxxx</label>
+  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+    <div class="input-group-addon">-</div>
+    <input type="text" class="form-control"
+    id="ssn3" placeholder="xxxx">
+  </div>
+</div>
+<div class="form-group">
+
+<div class="form-group">
+  <label for="Homeadd-input" class="col-2 col-form-label">Home Address</label>
+  <div class="form-group-inline">
+     <div class="col-xs-3 col-md-6">
+        <!-- Street 1 -->
+        <input type="text" class="form-control"
+        id="hstreet1_id" name="hstreet1"
+        placeholder="Address1 -Street address, P.O. box, company name, c/o">
+        <!-- Street 2 -->
+        <input type="text" class="form-control"
+        id="hstreet2_id" name="hstreet2"
+        placeholder="Address2 (optional) Apartment, suite, unit, building, floor, etc.">
+     </div>
+     <div class="col-xs-3 col-md-6">
+        <!-- City-->
+        <input type="text" class="form-control"
+        id="hcity_id" name="hcity" placeholder="City">
+        <!-- State Button -->
+        <select class="form-control" id="hstate_id">
+           <option value="HI">Hawaii</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+          </select>
+
+         <!-- Zip Code-->
+         <input type="text" class="form-control"
+         id="hzip_id" name="hzip" placeholder="zipcode - #####">
+       </div>
+   </div>
+</div>
+
+<div class="form-group">
+<input type="checkbox" class="custom-control-input" data-toggle="collapse"
+  data-target="#collapseMailADDR" aria-expanded="false" aria-controls="collapseExample">
+  Check If Mailing Address is different from Home Address.
+</div>
+  <div class="collapse" id="collapseMailADDR">
+     <div class="form-group">
+        <label for="Mailadd-input" class="col-2 col-form-label">Mailing Address</label>
+        <div class="form-group-inline">
+            <div class="col-xs-3 col-md-6">
+              <!-- Street 1 -->
+              <input type="text" class="form-control"
+              id="mstreet1_id" name="mstreet1"
+              placeholder="Address1 -Street address, P.O. box, company name, c/o">
+              <!-- Street 2 -->
+              <input type="text" class="form-control"
+              id="mstreet2_id" name="mstreet2"
+              placeholder="Address2 (optional) Apartment, suite, unit, building, floor, etc.">
+            </div>
+            <div class="col-xs-3 col-md-6">
+              <!-- City-->
+              <input type="text" class="form-control"
+              id="mcity_id" name="mcity" placeholder="City">
+              <!-- State Button -->
+              <select class="form-control" id="mstate_id">
+                 <option value="HI">Hawaii</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+
+                <!-- Zip Code-->
+                <input type="text" class="form-control"
+                id="mzip_id" name="mzip" placeholder="zipcode - #####">
+              </div> <!-- end div class for column spec-->
+          </div> <!--end div form grorp inline-->
+       </div> <!--end div form group row inline-->
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="form-inline">
+    <label for="telephoneinput" class="form-control-label">Telephone(s)</label>
+     <input class="form-control mb-2 mr-sm-2 mb-sm-0"
+     type="tel" value="555-555-5555" id="phone1">
+     <input class="form-control mb-2 mr-sm-2 mb-sm-0"
+     type="tel" value="555-555-5555 (optional)" id="phone2">
+   </div>
+</div>
+
+<div class="form-group">
+  <label for="emailin1">Email Address</label>
+  <div class="form-inline">
+     <input type="text"
+     class="form-control mb-2 mr-sm-2 mb-sm-0"
+     id="emailprefix" placeholder="first.last">
+
+  <label class="sr-only" for="emailin2">emailsuffix</label>
+  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+    <div class="input-group-addon">@</div>
+    <input type="text" class="form-control"
+    id="emailsuffix" placeholder="gmail.com">
+  </div>
+</div>
+<p> </p>
+<div class="form-group">
+  <label for="EmergencyInfo-input"
+  class="col-2 col-form-label">Emergency Contact Information</label>
+
+  <div class="form-group-inline">
+     <input type="text" id="efullname" class="col-xs-3 col-md-4"
+     placeholder="Emergency Contact Full Name" required>
+     <input type="text" id="erelation"  class="col-xs-3 col-md-4"
+     placeholder="Relate to...family, friend?">
+     <input type="text" id="ephone" class="col-xs-3 col-md-4"
+     placeholder="emergency phone xxx-xxx-xxxx">
+  </div>
+</div>
+<p> </p>
+<div class="form-group"> <!--clientnumber-->
+  <label for="clientnumber-input" class="col-2 col-form-label">Client Number</label>
+
+  <div class="form-group-inline">
+     <input type="text" id="clientnumber" class="col-xs-6 col-md-12"
+     placeholder="Client Number (Kua'na)" required>
+  </div>
+</div>
+<p> </p>
+<div class="form-group">
+    <div class="form-inline">
+    <label for="genderabLabel">Gender At Birth</label>
+    <select class="form-control" id="genderab">
+      <option>Male</option>
+      <option>Female</option>
+      <option>Not Answer</option>
+    </select>
+    <label for="gendercbLabel">Gender At Current</label>
+    <select class="form-control" id="genderac">
+      <option>Male</option>
+      <option>Female</option>
+      <option>Not Answer</option>
+    </select>
+</div>
+<p> </p>
+<div class="form-group">
+    <label for="preferpronouninput" class="col-1 col-form-label">Prefer Pronoun</label>
+    <div class="form-group-inline">
+       <input type="text" id="preferpronoun" class="col-xs-6 col-md-12"
+       placeholder="Prefer Pronoun" required>
+   </div>
+</div>
+
+<p> </p>
+
+<div class="form-group">
+    <div class="form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name=isUS> Is client a US Citizen?
+      </label>
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="isEC2"> Is client an E2 Client?
+      </label>
+      <!--
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="isManaged"> Is client a Managed Client?
+      </label>
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="isKCompleted"> Does Kuanna Program Complete?
+      </label>
+    -->
+    </div>
+</div>
+<div class="form-group">
+<input type="checkbox" class="custom-control-input" data-toggle="collapse"
+  data-target="#isIns" aria-expanded="false" aria-controls="collapseExample">
+  Has a health insurance?
+</div>
+  <div class="collapse" id="isIns">
+    <div class="form-group">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="Medicare"> HMAA
+          </label>
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="Humana"> HMSA
+          </label>
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="Kaiser"> Kaiser
+          </label>
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="Other"> Other private Insurance
+          </label>
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="Other"> UHA
+          </label>
+        </div> <!-- end form-check for check box-->
+    </div> <!-- end form-group for check box-->
+
+</div> <!--end collapse-->
+  <div class="col-auto">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}
